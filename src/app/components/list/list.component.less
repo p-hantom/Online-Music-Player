@@ -1,0 +1,52 @@
+@import '../../constants.less';
+
+.left-nav{
+    background-color: @white;
+    border-left: solid 1px @dark-grey;
+    border-right: solid 1px @dark-grey;
+    padding-left: 0;
+    padding-right: 0;
+    .nav-item{
+        font-size: 14px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    img{
+        width: 50px;
+        height: auto;
+    }
+    .selected{
+        background-color: @light-grey;
+    }
+}
+
+.content{
+    padding-top: 10px;
+    padding-bottom: @control-height + 30px;
+    height: 100%;
+    width: 100%;
+
+    .card-box{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid @light-grey;    
+    }
+
+    .rank-number{
+        width: 50px;
+        color: @text-light-grey;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    th{
+        text-align: center;
+    }
+
+    .detail-info{
+        padding-left: 20px;
+        // margin: auto;
+    }
+}

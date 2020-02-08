@@ -1,0 +1,27 @@
+<div class="content d-flex flex-row justify-content-center">
+  <fa-icon [icon]="faBackward"></fa-icon>
+  <div class="playIcon" (click)="handlerPlay()">
+    <fa-icon [icon]="faPause" *ngIf="data.status=='play'"></fa-icon>
+    <fa-icon [icon]="faPlay" *ngIf="data.status=='pause'"></fa-icon>
+  </div>
+  <fa-icon [icon]="faForward"></fa-icon>
+
+  <img [src]="data.coverUrl" />
+
+  <div class="detail d-flex flex-row">
+    <div class="title">
+      <span class="song-name">{{data.name}}</span>
+      <span>{{data.artist[0].name}}</span>
+    </div>
+
+    <!-- progress bar -->
+    <div class="bar">
+    </div>
+  </div>
+
+  <fa-icon [icon]="faAlignJustify" (click)="clickMyList()" style="right: 20px; position: absolute;"></fa-icon>
+</div>
+
+<app-my-list *ngIf="clickedMyList" [list]="data.myList"></app-my-list>
+
+<audio [src]="data.src" preload="auto" #audioElement></audio>

@@ -1,0 +1,10 @@
+<ul class="navbar_list d-flex flex-row justify-content-center">
+  <li *ngFor="let item of navBarIcons" class="nav_list_item">
+    <a [routerLink]="[item.routerLink ]" routerLinkActive="active">
+      <div class="span-div">
+        <span>{{item.text}}</span>
+      </div>
+    </a>
+    
+  </li>
+</ul>

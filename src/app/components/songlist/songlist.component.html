@@ -1,0 +1,19 @@
+<div class="card-box d-flex flex-row" @enter>
+  <span class="rank-number">{{i+1}}</span>
+  <img [src]="item.al.picUrl+'?param=100y100&quality=100'" />
+  <div class="detail-info d-flex flex-row">
+    <div class="detail-info-play d-flex flex-row" (click)="onClickSong(item)">
+      <fa-icon [icon]="faPlay"></fa-icon>
+      <!-- <fa-icon [icon]="faPause"></fa-icon> -->
+      <p style="padding-left: 30px; width: 200px;">{{item.name}}</p>
+    </div>
+    <p style="padding-left: 30px; width: 150px;">{{item.ar[0].name}}</p>
+    <p>{{item.dt/1000 | formatTime}}</p>
+    <fa-icon [icon]="faPlus" (click)="addToMyList(item)" class="fa-plus"></fa-icon>
+  </div>
+  <!-- <svg class="progress">
+    <circle class="progress_circle" cx="18" cy="18" r="14"
+      attr.stroke-dasharray="{{item.currentTime *100 / item.durationTime}} 113">
+    </circle>
+  </svg> -->
+</div>

@@ -1,0 +1,84 @@
+<div class="container">
+  <div class="row">
+    <div class="left-nav col-md-3">
+      <div @tipListAnimation *ngFor="let item of allTopListData.topList; let i=index;">
+        <div class="nav-item d-flex flex-row" [class.selected]="i===idx">
+          <img [src]="item.coverImgUrl" />
+          <a [routerLink]="['/list', i]">
+            <p style="padding-left: 5px;" (click)="toplistOnClick(i)">
+              {{item.name}}
+            </p>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="content col-md-9">
+      <!-- <div class="list-title d-flex flex-row">
+        <img [src]="allTopListData.topList[idx].coverImgUrl"/>
+      </div> -->
+      <app-songlist  *ngFor="let item of topListData.topList; let i=index;"
+        [item]="item" [i]="i" (clicked)="onClickedSong($event)">
+      </app-songlist>
+    </div>
+
+    <!--
+
+    <div class="content col-md-9">
+      <h3>List</h3>
+
+      <table>
+        <thead>
+          <th></th>
+          <th></th>
+          <th>title</th>
+          <th>artist</th>
+          <th>time</th>
+        </thead>
+        <tbody>
+          <app-songlist *ngFor="let item of topListData.topList; let i=index;"
+            [item]="item" [i]="i" (clicked)="onClickedSong($event)">
+          </app-songlist>
+
+          
+          <tr class="card-box" *ngFor="let item of topListData.topList; let i=index;">
+            <td>
+              <div class="rank-number"><p>{{i+1}}</p></div>
+            </td>
+            <td class="d-flex flex-row">
+              <img [src]="item.al.picUrl+'?param=100y100&quality=100'" />
+            </td>
+            <td>
+              <div class="detail-info d-flex flex-row" (click)="onClickSong($event)">
+                <fa-icon [icon]="faPlay"></fa-icon>
+                <p style="padding-left: 30px;">{{item.name}}</p>
+              </div>
+            </td>
+            <td>
+              <p style="padding-left: 30px;">{{item.ar[0].name}}</p>
+            </td>
+            <td>
+              <p>{{item.dt/1000 | formatTime}}</p>
+            </td>
+          </tr>
+         
+        </tbody>
+      </table>
+       -->
+      <!-- <ng-container *ngFor="let item of topListData.topList; let i=index;">
+        <div class="card-box d-flex flex-row">
+          <span class="rank-number">{{i+1}}</span>
+          <img [src]="item.al.picUrl+'?param=100y100&quality=100'" />
+          <div class="detail-info d-flex flex-row">
+            <fa-icon [icon]="faPlay"></fa-icon>
+            <p style="padding-left: 30px;">{{item.name}}</p>
+            <p style="padding-left: 30px;">{{item.ar[0].name}}</p>
+          </div>
+        </div>
+      </ng-container> 
+   
+    </div>
+    -->
+  </div>
+</div>
+

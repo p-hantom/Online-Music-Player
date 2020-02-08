@@ -1,0 +1,40 @@
+@import '../../constants.less';
+
+@icon-size: @control-height * 0.4;
+@img-height: @control-height * 0.8;
+@detail-fontsize: @control-height * 0.2;
+
+.content{
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+    height: @control-height;
+    width: 100%;
+    background-color: @control-bg-dark;
+    opacity: 0.8;
+    color: @text-white;
+}
+
+img{
+    width: @img-height;
+    height: auto;
+}
+
+.detail{
+    font-size: @detail-fontsize;
+    color: @text-light-grey;
+    span{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .song-name{
+        color: @white;
+    }
+}
+
+fa-icon{
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: @icon-size;
+}

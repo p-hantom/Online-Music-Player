@@ -1,0 +1,11 @@
+{
+    "/api": {
+      "target": "https://music.soscoon.com/api",
+      "secure": false,
+      "pathRewrite": {
+        "^/api": ""
+      },
+      "changeOrigin": true
+    }
+  }
+  

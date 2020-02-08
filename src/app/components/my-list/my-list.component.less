@@ -1,0 +1,57 @@
+@import '../../constants.less';
+@width: 500px;
+
+.content{
+    width: @width;
+    position: fixed;
+    right: 0;
+    top: @nav-height + 300px;
+    bottom: @control-height;
+    z-index: 11;
+    background-color: @control-bg-dark;
+    color: @light-grey;
+    font-size: @content-font-size;
+
+    padding-left: 5px;
+}
+
+.title{
+    font-size: @content-font-size + 5;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: solid 2px @light-grey;
+}
+
+.faTrashAlt-title{
+    right: 20px;
+}
+
+.list{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: @width;
+    &:hover{
+        color: @white;
+        background-color: @bg-black;
+    }
+}
+
+.faPlay{
+    color: @red;
+}
+
+.iname{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    cursor: pointer;
+}
+.iartist{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.itime{
+    color: @dark-grey;
+}

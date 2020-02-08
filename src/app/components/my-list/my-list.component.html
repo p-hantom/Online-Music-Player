@@ -1,0 +1,24 @@
+<div class="content">
+  <div class="title d-flex flex-row">
+    <div class="col-sm-10"><p>My List ({{data.myList.length}})</p></div>
+    <div class="col-sm-2">
+      <fa-icon [icon]="faTrashAlt" class="faTrashAlt-title" (click)="removeAllFromList()"></fa-icon>
+    </div>
+  </div>
+
+  <div *ngIf="data.myList.length==0" class="emptyInfo">
+    <p>Empty~</p>
+  </div>
+
+  <div class="list d-flex flex-row" @listAnimation *ngFor="let item of data.myList; let i=index;"
+     (mouseenter)="mouseEnterItem(i)" (mouseleave)="mouseLeaveItem(i)">
+    <fa-icon class="col-sm-1 faPlay" [icon]="faPlay" *ngIf="item.id==data.currentId"></fa-icon>
+    <div class="iname col-sm-6" (click)="handlePlay(item)">
+      <p>{{item.name}}</p>
+    </div>
+    <fa-icon class="col-sm-1" [icon]="faTrashAlt" *ngIf="i==mouseEntered"
+        (click)="deleteItem(item)"></fa-icon>
+    <div class="iartist col-sm-2">{{item.ar[0].name}}</div>
+    <div class="itime col-sm-2">{{item.dt/1000 | formatTime}}</div>
+  </div>
+</div>
